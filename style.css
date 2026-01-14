@@ -1,0 +1,572 @@
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper{
+    width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo a{
+    font-size: 59px;
+    font-weight: bold;
+    float: left;
+    font-family: Courier;
+    color: #F39EB6;
+}
+
+.menu{
+    float: right;
+
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    background: transparent;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li{
+    float: left;
+}
+
+nav ul li a{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+#Home{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/tess.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+#Home h1{
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+#Home p{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 12px 35px;
+    border-radius: 25px;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: pink; 
+    color: white;
+}
+
+.btn-primary:hover {
+    background: pink;
+}
+
+a.tbl-hijau{
+    background: #1DB954;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*transisi halaman*/
+.page-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.page-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-content.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+body {
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*background halstories*/
+.stories-hero {
+    min-height: 100vh;
+    height: auto;
+    background: linear-gradient(135deg, #f8d7e1, #2b0f1c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 200px;
+}
+
+.stories-page h1 {
+    letter-spacing: 1px;
+}
+
+.stories-page p {
+    opacity: 0.9;
+}
+
+.stories-page .content {
+    backdrop-filter: blur(6px);
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(
+        135deg,
+        #f8d7e1 0%,
+        #f3b6c8 40%,
+        #2b0f1c 100%
+    );
+}
+
+/*animasi letter*/
+.envelope {
+    position: relative;
+    width: 520px;
+    height: 340px;
+    background: #2a0e1a;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 40px 90px rgba(0,0,0,.6);
+    cursor: pointer;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: -160px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 260px solid transparent;
+    border-right: 260px solid transparent;
+    border-bottom: 160px solid #3a1022;
+    transform-origin: bottom;
+    transition: transform 1s ease;
+    z-index: 2;
+}
+
+/* surat */
+.letter {
+    position: absolute;
+    left: 50%;
+    bottom: -140%;
+    transform: translateX(-50%);
+    width: 1050px;
+    max-height: 480px;
+    background: rgba(15, 8, 12, 0.96);
+    padding: 55px 70px;
+    border-radius: 18px;
+    color: #f3e6eb;
+    text-align: left;
+    line-height: 1.8;
+    overflow-y: auto;
+    z-index: 4;
+    font-size: 17px;
+    transition: bottom 1.4s ease;
+}
+
+/* teks surat */
+.letter h1 {
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.story-date {
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+/* animasi buka */
+@keyframes openFlap {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-160deg);
+    }
+}
+
+@keyframes slideLetter {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 20px;
+    }
+}
+
+/*animasi tutup*/
+.envelope .letter {
+    bottom: -90%;
+}
+
+.envelope .envelope-flap {
+    transform: rotateX(0deg);
+}
+
+/* KEADAAN TERBUKA */
+.envelope.open .letter {
+    bottom: 50px;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope{
+    overflow: visible;
+}
+
+.envelope{
+    cursor: pointer;
+}
+
+.envelope-flap{
+    z-index: 3;
+    pointer-events: none;
+}
+
+.letter::-webkit-scrollbar {
+    width: 6px;
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+/*design halcontact*/
+.contact-hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.contact-card {
+    background: rgba(20, 10, 15, 0.85);
+    padding: 60px 80px;
+    border-radius: 20px;
+    color: #f3e6eb;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.contact-card h1 {
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.contact-person {
+    margin-bottom: 35px;
+}
+
+.contact-person h2 {
+    color: #F39EB6;
+    margin-bottom: 10px;
+}
+
+.contact-person p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+nav ul li a.active {
+    color: #F39EB6;
+    text-decoration: underline;
+}
+
+.contact-hero {
+    min-height: 100vh;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.85)
+    ), url('images/tess.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    color: white;
+}
+
+.contact-card {
+    background: rgba(20, 10, 15, 0.85);
+    padding: 50px 60px;
+    border-radius: 25px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 40px 90px rgba(0,0,0,.6);
+    text-align: center;
+}
+
+.contact-person {
+    margin-top: 30px;
+}
+
+.contact-person h2 {
+    color: #F39EB6;
+    margin-bottom: 10px;
+}
+
+/*bagan waktu*/
+.time-hero {
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.75)
+    ), url('images/tess.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+    padding-top: 120px;
+}
+
+.time-hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.time-hero p {
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/*design time count*/
+
+.time-hero {
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(
+        circle at center,
+        #82446b 100%,
+        #FDB7EA 50%,
+        #B8DB80 0%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+    box-sizing: border-box;
+}
+
+
+.time-card{
+    max-width: 620px;
+    width: 80%;
+    padding: 15px 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+}
+
+.time-card h1 {
+    font-size: 48px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.subtitle{
+    font-size: 16px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+}
+
+.time-hero p {
+    opacity: 0.8;
+    margin-bottom: 50px;
+}
+
+/* COUNTER */
+.time-counter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.time-counter div {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 13px 10px;
+}
+
+.time-counter span {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+.time-counter small {
+    font-size: 13px;
+    opacity: 0.75;  
+}
+
+
+/*buat teks di waktu otomatis*/
+.love-text {
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0.85;
+    font-style: italic;
+    color: #ffdbe7;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+/*halmemories*/
+.memories-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #fdf2f5, #f39eb6); /* Gradasi agar bawahnya tidak kosong */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* layout */
+.funny-gallery {
+    column-count: 7; /*jumlah kolom */
+    column-gap: 50px;
+    padding: 40px;
+}
+
+/*gaya frame*/
+.photo-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 60px; /*jarak fotonya*/
+    break-inside: avoid; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    display: inline-block;
+    width: 100%;
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.photo-card .caption {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /*ketikan*/
+    margin-top: 15px;
+    color: #555;
+    font-weight: bold;
+}
+
+/*efek*/
+.photo-card:nth-child(odd) {
+    transform: rotate(3deg) translateY(10px);
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(-3deg)  translateY(-10px);
+}
+
+.photo-card:nth-child(3n) {
+    transform: rotate(1.5deg) translateY(20px);
+}
+
+.photo-card:nth-child(4n) {
+    transform: rotate(-2deg) scale(0.95);
+}
+
+/*efek mouse*/
+.photo-card:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/*respon*/
+@media (max-width: 768px) {
+    .funny-gallery {
+        column-count: 2;
+    }
+}

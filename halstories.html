@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- bar navigasi -->
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a 
+                href="index.html">Love.</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="haltime.html">Time</a></li>
+                    <li><a href="halstories.html" class="active">Stories</a></li>
+                    <li><a href="halmemories.html">Memories</a></li>
+                    <li><a href="halcontact.html">Contact</a></li>
+                    <li><a href="https://open.spotify.com/playlist/7cOrtzDyXa732qvICv5QC9?si=c47147f53e6c45c3" class="tbl-hijau">Spotify</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Utama tengah-tengah -->
+      <main class="page-content">
+    <section class="stories-hero">
+        <div class="envelope" id="envelope">
+            <div class="letter">
+            <h1>Our Stories Begins</h1>
+
+            <p class="story-date">- Jakarta, 28 December 2023 -</p>
+
+            <p>
+                Hai, Ivonne Nathalia.
+            </p>
+            <p>
+                Nama yang indah, sayang jika namamu yang indah itu tidak aku pamerkan ke seluruh sudut dunia ini.
+            </p>
+            <p>
+                Sang anugerah kecil yang diturunkan Tuhan di sebuah keluarga harmonis, hidup layak serta berkecukupan membuat aku sedikit berpikir untuk mengambil hatinya.
+            </p>
+            <p> 
+                awal cerita indah yang aku mulai pada kala itu di dalam hidup-mu. Ingatkah kamu akan hal itu? hal yang merubah jalan cerita cinta-mu.
+                Kala itu, jauh sebelum aku memberanikan diri untuk mengirimkan sebuah pesan tidak jelas di instagram. Aku telah melihatmu jauh dari sudut kantin menuju arah ruang guru.
+                Kamu bersama dengan teman-mu, berjalan cepat seperti sedang lomba atletik, terasa aneh tapi lucu.
+                Sepanjang sebelum aku memberanikan diri, aku selalu bimbang, ragu, dan bingung apa yang aku harus lakukan. Haruskan aku mengirimkan pesan itu dengan embel-embel membalas story-mu.
+                Hahaha kala itu banyak sekali yang aku pertimbangkan, tapi pada akhirnya untung aku mengambil keputusan yang tepat.
+            </p>
+            <p>
+                Mungkin kamu tau, untuk mengambil hati-mu sangat membutuhkan effort dan waktu yang lumayan lama. Dimulai dari kamu lama untuk membalas chat aku, aku menunggu sekitar
+                paling lama 15 jam sekali untuk mendapatkan balasan dari kamu. Lalu, mendapatkan nomor whatsapp kamu aku membutuhkan waktu sekitar 2 bulan.
+                Dan banyak lagi cerita-cerita yang aneh, unik, dan berkesan disaat aku berusaha untuk mendapatkan hati-mu.
+            </p>
+            <p>
+                Hingga pada akhir dari lamanya cerita untuk meluluhkan hati kamu. Aku berhasil, iya, aku berhasil meluluhkan hati kamu von.
+                Terimakasih udah mau lulu sama aku. Dan pada akhirnya, aku memutuskan untuk menepati janji-ku kepada kamu. Aku melontarkan pertanyaan itu disaat kita akan pulang 
+                dari blok-m. Saat itu terasa aneh, tidak ada bunga, tidak ada boneka, dan tidak ada semua persiapan seperti umumnya orang-orang menembak wanita yang mereka suka.
+                Tetapi meskipun kelihatan aneh seperti itu, kamu tetap mau menerima aku dengan sepenuh hati dan perasaan kamu von. 
+            </p>
+            <p>
+                Sayanggg, terimakasih ya. Terimakasih kamu udah memberikan kesempatan panjang buat aku untuk meluluhkan hati kamu.
+                Makasih kamu udah membalas dm instagram aku waktu itu. Makasih juga kamu udah menerima aku sepenuh dan segala kekurangan aku.
+                Terimakasih sayang. terimakasih udah menerima segala kesalahan aku, segala sikap dan sifat aku yang aneh.
+                Kamu baik, kamu lembut, kamu penuh kasih. Aku mencintamu dengan sepenuh hati von.
+            </p>
+            <p>
+                Bertahanlah akan segala badai, bersamaku hingga akhirnya tiba.
+                Percayalah aku melakukan semua usaha ini untuk kedua orangtuaku, kakak, dan kamu.
+                Terimakasih telah memberi tau aku bagaimana rasanya jatuh cinta secara tulus.
+            </p>
+            
+            <p class="story-date">- From Love -</p>
+            </div>
+            <div class="envelope-flap"></div>
+        </div>
+    </section>
+    </main>
+
+<!-- transisi -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const page = document.querySelector(".page-content");
+    page.classList.add("loaded");
+
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (href && !href.startsWith("#") && !href.startsWith("http")) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                page.classList.remove("loaded");
+                page.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            });
+        }
+    });
+});
+</script>
+
+
+<!--animasi buka surat-->
+<script>
+const envelope = document.getElementById("envelope");
+envelope.addEventListener("click", () => {
+    envelope.classList.toggle("open");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="index.html">Love.</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="haltime.html">Time</a></li>
+                    <li><a href="halstories.html">Stories</a></li>
+                    <li><a href="halmemories.html">Memories</a></li>
+                    <!-- FIX DI SINI -->
+                    <li><a href="halcontact.html">Contact</a></li>
+                    <li>
+                        <a href="https://open.spotify.com/playlist/7cOrtzDyXa732qvICv5QC9?si=c47147f53e6c45c3"
+                           class="tbl-hijau" target="_blank">
+                           Spotify
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+     <main class="page-content">
+    <section id="Home">
+        <div class="content">
+            <h1>For Our Long Story</h1>
+            <p>Ivonne Nathalia.<br>THIS IS FOR YOU, WITH LOVE!</p>
+            <div class="buttons">
+                <a href="halstories.html" class="btn-primary">Read!</a>
+            </div>
+        </div>
+    </section>
+     </main>
+
+    <!-- TRANSISI HALAMAN -->
+<script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const page = document.querySelector(".page-content");
+    page.classList.add("loaded");
+
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (href && !href.startsWith("#") && !href.startsWith("http")) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                page.classList.remove("loaded");
+                page.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>

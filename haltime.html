@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--navbar-->
+
+    <nav>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="index.html">Love.</a></div>    
+            <div class="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="haltime.html" class="active">Time</a></li>
+                        <li><a href="halstories.html">Stories</a></li>
+                        <li><a href="halmemories.html">Memories</a></li>
+                        <li><a href="halcontact.html">Contact</a></li>
+                        <li><a href="https://open.spotify.com/playlist/7cOrtzDyXa732qvICv5QC9?si=c47147f53e6c45c3" class="tbl-hijau">Spotify</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--yang diperluin-->
+
+    </nav>
+    <main class="page-content">
+    <section class="time-hero">
+        <div class="time-card">
+            <h1>Our Day Count</h1>
+            <p>Every moment we’ve been through together</p>
+
+            <div class="time-counter">
+                <div>
+                    <span id="days">0</span>
+                    <small>Days</small>
+                </div>
+                <div>
+                    <span id="hours">0</span>
+                    <small>Hours</small>
+                </div>
+                <div>
+                    <span id="minutes">0</span>
+                    <small>Minutes</small>
+                </div>
+                <div>
+                    <span id="seconds">0</span>
+                    <small>Seconds</small>
+                </div>
+
+                <p id="love-text" class="love-text"></p>
+            </div>
+        </section>
+        </main>
+
+    <!--transisi-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const page = document.querySelector(".page-content");
+    page.classList.add("loaded");
+
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (href && !href.startsWith("#") && !href.startsWith("http")) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                page.classList.remove("loaded");
+                page.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            });
+        }
+    });
+});
+</script>
+
+<!--timecount-->
+<script>
+    const startDate = new Date("December 28, 2024 00:00:00").getTime();
+
+    function updateTime() {
+        const now = new Date().getTime();
+        const distance = now - startDate;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        //teks
+        const loveText = document.getElementById("love-text");
+
+        if (days < 7) {
+            loveText.innerText = 
+                `-`;
+        } 
+        else if (days < 30) {
+            loveText.innerText = 
+                `-`;
+        } 
+        else if (days < 100) {
+            loveText.innerText = 
+                `${days} -`;
+        } 
+        else {
+            loveText.innerText = 
+                `${days} After days we’ve spent together. My love for you remains the same, Ivonne Nathalia!`;
+        }
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>

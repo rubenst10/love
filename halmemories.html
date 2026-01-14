@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <title>Memories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--bar navigasi-->
+    <nav>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="index.html">Love.</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="haltime.html">Time</a></li>
+                    <li><a href="halstories.html">Stories</a></li>
+                    <li><a href="#Memories" class="active">Memories</a></li>
+                    <li><a href="halcontact.html">Contact</a></li>
+                    <li><a href="https://open.spotify.com/playlist/7cOrtzDyXa732qvICv5QC9?si=c47147f53e6c45c3" class="tbl-hijau">Spotify</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--bagan nya-->
+<section id="Memories" class="memories-section">
+    <div class="wrapper">
+        <div class="title-section">
+            <h1>Apa inii!</h1>
+            <p>Semua hal yang udah kita lewatinn.</p>
+        </div>
+
+        <div class="funny-gallery">
+            <div class="photo-card">
+                <img src="images/foto1.jpg" alt="Memory">
+                <div class="caption">Pertama kali kita pergi setelah pulang sekolah.</div>
+            </div>
+            
+            <div class="photo-card">
+                <img src="images/foto2.jpg" alt="Memory">
+                <div class="caption">Pertama kali kita buat lego barengg!!</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/foto3.jpg" alt="Memory">
+                <div class="caption">Pertama kalinya aku kenalin kamu ke mama :) </div>
+            </div>
+            
+            <div class="photo-card">
+                <img src="images/foto4.jpg" alt="Memory">
+                <div class="caption">Pertama kalinya kita jalan bareng</div>
+            </div>
+
+                        <div class="photo-card">
+                <img src="images/foto5.jpg" alt="Memory">
+                <div class="caption">Kita ketemu lagi after 6 bulan ldr :(</div>
+            </div>
+            
+            <div class="photo-card">
+                <img src="images/foto6.jpg" alt="Memory">
+                <div class="caption">1st Xmas dinner</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/foto7.jpg" alt="Memory">
+                <div class="caption">Kita jalan waktu birthday kamuu</div>
+            </div>  
+    </div>
+</section>
+
+<!--transisi-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const page = document.querySelector(".page-content");
+    page.classList.add("loaded");
+
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (href && !href.startsWith("#") && !href.startsWith("http")) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                page.classList.remove("loaded");
+                page.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            });
+        }
+    });
+});
+</script>
+
+
+</body>
+</html>
