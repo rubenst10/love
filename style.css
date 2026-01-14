@@ -69,14 +69,11 @@ nav ul li a:hover{
 #Home{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/tess.jpg');
+    background-image: 
+      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+      url('tess.jpg');
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
 }
 #Home h1{
     font-size: 70px;
@@ -569,4 +566,5 @@ nav ul li a.active {
     .funny-gallery {
         column-count: 2;
     }
+
 }
